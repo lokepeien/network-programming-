@@ -1,0 +1,246 @@
+==== show version ====
+Cisco IOS XE Software, Version 16.09.05
+Cisco IOS Software [Fuji], Virtual XE Software (X86_64_LINUX_IOSD-UNIVERSALK9-M), Version 16.9.5, RELEASE SOFTWARE (fc1)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2020 by Cisco Systems, Inc.
+Compiled Thu 30-Jan-20 18:48 by mcpre
+
+
+Cisco IOS-XE software, Copyright (c) 2005-2020 by cisco Systems, Inc.
+All rights reserved.  Certain components of Cisco IOS-XE software are
+licensed under the GNU General Public License ("GPL") Version 2.0.  The
+software code licensed under GPL Version 2.0 is free software that comes
+with ABSOLUTELY NO WARRANTY.  You can redistribute and/or modify such
+GPL code under the terms of GPL Version 2.0.  For more details, see the
+documentation or "License Notice" file accompanying the IOS-XE software,
+or the applicable URL provided on the flyer accompanying the IOS-XE
+software.
+
+
+ROM: IOS-XE ROMMON
+
+CSR1kv uptime is 1 hour, 4 minutes
+Uptime for this control processor is 1 hour, 5 minutes
+System returned to ROM by reload
+System image file is "bootflash:packages.conf"
+Last reload reason: reload
+
+
+
+This product contains cryptographic features and is subject to United
+States and local country laws governing import, export, transfer and
+use. Delivery of Cisco cryptographic products does not imply
+third-party authority to import, export, distribute or use encryption.
+Importers, exporters, distributors and users are responsible for
+compliance with U.S. and local country laws. By using this product you
+agree to comply with applicable laws and regulations. If you are unable
+to comply with U.S. and local laws, return this product immediately.
+
+A summary of U.S. laws governing Cisco cryptographic products may be found at:
+http://www.cisco.com/wwl/export/crypto/tool/stqrg.html
+
+If you require further assistance please contact us by sending email to
+export@cisco.com.
+
+License Level: ax
+License Type: Default. No valid license found.
+Next reload license Level: ax
+
+
+Smart Licensing Status: Smart Licensing is DISABLED
+
+cisco CSR1000V (VXE) processor (revision VXE) with 2182252K/3075K bytes of memory.
+Processor board ID 9S8PLAVQ6KQ
+1 Gigabit Ethernet interface
+32768K bytes of non-volatile configuration memory.
+3984836K bytes of physical memory.
+25599999K bytes of virtual hard disk at bootflash:.
+0K bytes of WebUI ODM Files at webui:.
+
+Configuration register is 0x2102
+
+==== show ip interface brief ====
+Interface              IP-Address      OK? Method Status                Protocol
+GigabitEthernet1       192.168.122.63  YES DHCP   up                    up      
+Loopback100            10.10.10.1      YES manual up                    up
+
+==== show running-config ====
+Building configuration...
+
+Current configuration : 3802 bytes
+!
+! Last configuration change at 05:54:15 UTC Sun Jul 5 2026 by cisco
+!
+version 16.9
+service timestamps debug datetime msec
+service timestamps log datetime msec
+platform qfp utilization monitor load 80
+no platform punt-keepalive disable-kernel-core
+platform console virtual
+!
+hostname CSR1kv
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+login on-success log
+!
+!
+!
+!
+!
+!
+!
+subscriber templating
+! 
+! 
+! 
+! 
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+crypto pki trustpoint TP-self-signed-1145925390
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-1145925390
+ revocation-check none
+ rsakeypair TP-self-signed-1145925390
+!
+!
+crypto pki certificate chain TP-self-signed-1145925390
+ certificate self-signed 01
+  30820330 30820218 A0030201 02020101 300D0609 2A864886 F70D0101 05050030 
+  31312F30 2D060355 04031326 494F532D 53656C66 2D536967 6E65642D 43657274 
+  69666963 6174652D 31313435 39323533 3930301E 170D3236 30363038 30373131 
+  35385A17 0D333030 31303130 30303030 305A3031 312F302D 06035504 03132649 
+  4F532D53 656C662D 5369676E 65642D43 65727469 66696361 74652D31 31343539 
+  32353339 30308201 22300D06 092A8648 86F70D01 01010500 0382010F 00308201 
+  0A028201 01008E16 BC7CEBE8 7554286B FA615694 4C6477FB 12777696 86601626 
+  0391F868 EE2E92C2 95706B10 D8218B36 D87EFD6D 3072B81F C2A1A997 D2A0386E 
+  599E5D9F 1EB22959 2602BC79 6DA80C72 13FC77EF 2F7BAFBA 3A711186 8DAE44BC 
+  BA9747D7 8C8444D4 3459A0D2 09886748 28C8C312 953FDA21 4C24DC65 3534FAD3 
+  8E33C7FB 2878F693 6DD085A6 D99705D7 266E9408 98B8B3AD 2F145EEA 15D3ABB8 
+  CD678074 56022B90 5ABB04D0 800B42C2 B52A3DED 4778ACEE 23AE5BE8 C9438B6D 
+  6D050AD2 32F37829 AC7A86B6 3D5C1C69 6952BC2F E467192B FE3C4E07 895A1C0F 
+  E61A53BE 14AD157B EB9B3B1F 0813F097 A8B23FDE 63AFDE9F E275E0AA 535193DB 
+  969B9044 A1650203 010001A3 53305130 0F060355 1D130101 FF040530 030101FF 
+  301F0603 551D2304 18301680 14CEE26E F0E4D140 14343E6D 22F88F31 5B1CE0EB 
+  43301D06 03551D0E 04160414 CEE26EF0 E4D14014 343E6D22 F88F315B 1CE0EB43 
+  300D0609 2A864886 F70D0101 05050003 82010100 547E8DFD 3F279A7D F0A6C956 
+  0DD03F3B AE0639ED 448EAE73 80EAE15E FAFA0C9B 06224CF2 584F58AD 466A2807 
+  C9FD2402 21C4E622 E3348DBC 12FF68DD D58652A3 A56B7007 2E73F0FB BF96D0F4 
+  0E11FB20 D2E14BF3 DFF54D24 38779FE3 824FB30A 05618BF2 AF6640D4 89C81EA6 
+  6ACDCDD5 97C205D7 C07BBE71 2953B788 0D17BD0B 87260778 980C38ED 50390EB2 
+  41BC4D8F D12BB46B 1FBE08EE B3A34DE6 39B44B9C C79AE9F1 500817A0 DC093B79 
+  192DD67B 18035128 50528667 F0F6C9CE 83C4687A 7A745829 AEF8FB60 B1B5FC36 
+  0AC28022 5713DB17 3DBDC40B 1316E7AA 664652A5 BBF35D19 70B771B3 4BB999F2 
+  62F851D4 FB1E59FA 34D52365 F97D1BD3 5C029BE2
+  	quit
+!
+!
+!
+!
+!
+!
+!
+!
+license udi pid CSR1000V sn 9S8PLAVQ6KQ
+no license smart enable
+diagnostic bootup level minimal
+!
+spanning-tree extend system-id
+!
+!
+!
+username cisco privilege 15 secret 5 $1$ffW0$Ulwg1rsATDRqZ54Qk0HOA1
+username netadmin privilege 15 secret 5 $1$HZRW$/fkwPbATeHM6FhMtepA1d0
+!
+redundancy
+!
+!
+!
+!
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+! 
+! 
+!
+!
+interface Loopback100
+ description Configured-via-Ansible-NetworkProgramming-Assignment
+ ip address 10.10.10.1 255.255.255.0
+!
+interface GigabitEthernet1
+ description IPv6 ADDRESS
+ ip address dhcp
+ negotiation auto
+ ipv6 address FE80::1:1 link-local
+ ipv6 address 2001:DB8:ACAD:1::1/64
+ no mop enabled
+ no mop sysid
+!
+ip forward-protocol nd
+ip http server
+ip http authentication local
+ip http secure-server
+ip http client source-interface GigabitEthernet1
+ip route 10.20.20.0 255.255.255.0 192.168.122.1
+!
+ip ssh version 2
+!
+!
+!
+!
+!
+control-plane
+!
+!
+!
+!
+!
+banner motd ^C
+Authorized access only.
+Configured automatically via Ansible - Network Programming Assignment.
+^C
+!
+line con 0
+ stopbits 1
+line vty 0 4
+ login local
+ transport input all
+!
+!
+!
+!
+!
+!
+end

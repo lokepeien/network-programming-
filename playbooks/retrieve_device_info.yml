@@ -1,0 +1,27 @@
+---
+- name: Retrieve device information from CSR1000v
+  hosts: csr1kv
+  gather_facts: no
+
+  tasks:
+    - name: Run show commands on router
+      cisco.ios.ios_command:
+        commands:
+          - show version
+          - show ip interface brief
+          - show running-config
+      register: device_info
+
+    - name: Save device information to local file
+      delegate_to: localhost
+      copy:
+        content: |
+          ==== show version ====
+          {{ device_info.stdout[0] }}
+
+          ==== show ip interface brief ====
+          {{ device_info.stdout[1] }}
+
+          ==== show running-config ====
+          {{ device_info.stdout[2] }}
+        dest: "{{ playbook_dir }}/../output/device_info.txt"
